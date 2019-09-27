@@ -1,0 +1,58 @@
+.card-body{
+  background-color: orange;
+  position: relative;
+
+}
+.card-body ul li{  
+  margin-top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.card-body ul
+{
+  list-style-type: none;
+}
+.card-header{
+  background-color: orange;
+}
+.card-body .movname{
+  font-size:25px;
+  font-weight: bold;
+}
+.qrcode{
+
+  margin-top: 5px;
+  margin-left: 50px;
+  
+}
+.container{
+  width: 400px;
+  margin-top: 10px;
+}
+.card {
+  border-radius: 8px;
+  border-style: none;
+  overflow: hidden;
+  transform: scale(1);
+  box-shadow: 0 3px 8px 18px rgba(9, 202, 154, 0.1), 0 3px 8px 8px rgba(241, 206, 7, 0.18);  
+}
+
+a {
+  padding: 10px;
+  background-color: rgb(20, 157, 220);
+  margin-top: 40px;
+  margin-left: calc(50% - 20px);
+  width: 40px;
+  color: white;
+}
+
+@media only screen and (max-width: 400px){
+
+  .container{
+    width: 100%;
+  }
+  .qrcode{
+    position: relative;
+    left:50%;
+    margin-left: -115px;
+  }
+}

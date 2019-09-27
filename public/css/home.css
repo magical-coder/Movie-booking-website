@@ -1,0 +1,93 @@
+.wrapper {
+    background-color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #ff9900;
+    color: #FFC0CB;
+    box-shadow: inset 0 0 0 50px rgba(0, 0, 0, 0.2);
+
+
+}
+li
+{
+    font-weight: bolder;
+    font-size: 15px;
+}
+ul>li> a:hover > .glyphicon{
+    color: orange;
+}
+
+.ctgr img {
+    display:block;
+    position:relative;
+    -webkit-transition:all .4s linear;
+    transition:all .4s linear;
+    }
+
+    #demo:hover img {
+        -ms-transform:scale(1.1);
+        -webkit-transform:scale(1.2);
+        transform:scale(1.2);
+        }
+.navbar {
+    
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 13px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+ }
+
+.ctgr {   
+    color: white;
+    text-align: center;
+    padding: 10px;
+    padding-top: 0px;
+    margin-top: 0px;
+    /* margin-bottom: 5px; */
+
+}
+
+.ctgr * {
+    display: block;
+}
+
+.ctgr img {
+    /* border: 2px solid white; */
+    border-radius: 10px;
+    margin: 4px 2px 4px 2px;
+    opacity: 1;
+    height: 35vh;
+    margin-left: 25px;
+    width: 85%;*/
+    /* height: 35vh; */
+}
+
+@media screen and (max-width: 800px) {
+  .ctgr img {
+       height: 20vw;
+       width: 60%;
+       margin-left: 20%;
+  }
+  .ctgr {
+      margin-bottom: 1vh;
+  }
+}
+
+@media screen and (max-width: 330px) {
+    .ctgr {
+        font-size: 10px;
+    }
+
+    .ctgr {
+        margin-bottom: 5vh;
+    }
+}
+
+@keyframes opaque {
+    100% {
+        opacity: 1;
+    }
+}

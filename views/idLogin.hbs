@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RSI Pune</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style type="text/css">
+    .mybutton
+    {
+      margin-left: 29%;
+      margin-top:20px;
+    }
+    body
+    {
+      background-color: black;
+    }
+    .mylogin
+    {
+      padding-right: 20%;
+      padding-left: 20%;
+    }
+    .mypad
+    {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+
+    .color {
+      background-color: black;
+      color: goldenrod;
+      border: none;
+    }
+
+    @media screen and (max-width: 800px) {
+  .mypad{
+       padding-left: 10%;
+       padding-right: 10%;
+       width: 100%;
+  }
+  .mylogin {
+    padding: 0;
+  }
+  .mybutton
+  {
+    margin-left: 29%;
+    margin-top:20px;
+  }
+}
+.two-col {
+    overflow: hidden;/* Makes this div contain its floats */
+}
+
+.two-col .col1 {
+    float: left;
+}
+
+.two-col .col2 {
+    float: right;
+}
+
+.two-col label {
+    display: block;
+}
+#field1:hover{
+  background-color: black;
+  border-color: goldenrod;
+}
+#field2:hover{
+  background-color: black;
+  border-color: goldenrod;
+}
+  </style>
+</head>
+<body>
+<div class="container-fluid mylogin">
+<div class="row">
+    <img class="img-responsive mypad" src="rsi.png" />
+</div>
+</div>
+<div class="container-fluid mylogin">
+<div class="row">
+        <div class="mypad">
+        <div class="mylogin" id="loginModal">
+              <div class="modal-body">
+                <div class="well color">
+                  <div id="myTabContent" class="tab-content color">
+                    <div class="tab-pane active in" id="login">
+                      <form name="formName" oninput class="form-horizontal" action='/idVerify' method="POST">
+                        <fieldset>
+                          <div class="control-group">
+                            <label class="control-label"  for="rsiid">Enter Your RSI ID (Ex. X-1234)</label>
+                              <div style="font-size: 13px; color: red; font-weight: bolder;">{{messages}}</div>
+
+
+                                 <input id="field1"  class="form" name="field1" style="background-color:black; width:20%;border-color: goldenrod;border-radius: 5px;color:goldenrod;" type="text" maxlength="1" oninput="autotab(this, document.formName.field2);this.value = this.value.toUpperCase()" >
+                                 <span class="glyphicon glyphicon-minus"></span>
+                                 <input id="field2" class="form" name="field2"  style="background-color:black;width:54%; float:top; border-color: goldenrod;border-radius: 5px;color:goldenrod;" type="number" oninput="generateFullName()">
+
+
+                            </div>
+                          <div class="control-group">
+                            <div class="controls">
+                              <button class="btn btn-success mybutton" style="background-color:goldenrod;border-color:goldenrod;color:black;">SUBMIT</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+</body>
+<script>
+var someInput = document.querySelector('#field1');
+someInput.addEventListener('input', function () {
+    someInput.value = someInput.value.toUpperCase();
+    field1.value=someInput.value;
+  //  alert(field1.value);
+});
+
+
+function autotab(current,to)
+{
+    if (current.getAttribute && current.value.length==current.getAttribute("maxlength"))
+    {
+        to.focus();
+        generateFullName();
+      //  alert("this.value");
+    }
+}
+</script>
+</html>

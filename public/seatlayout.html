@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title>seatLayout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            background-color:#EAE7DC;
+        }
+        .seat {
+            height: 30px;
+            width: 30px;
+            /* border: 1px solid gray; */
+           cursor:pointer;
+           background-color:#EAE7DC;
+           border-radius: 5px;
+        }
+        img{
+            height: inherit;
+            width: inherit;
+            border-radius: 5px;
+        }
+        .walk{
+            padding-left:20px;
+        }
+        .center-block {
+            margin: 0 auto;
+            margin-top : 70px;
+        }
+        button {
+            margin:0 auto;
+            display:block;
+        }
+        /* td div{
+        	border-radius : 5px;
+        } */
+        .hd{
+            visibility: hidden;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script>
+        var config = {
+        apiKey: "AIzaSyAYVo9bF75SAT8Ez5SjpydIiv0QiYoEocA",
+        authDomain: "rsi-project-656a3.firebaseapp.com",
+        databaseURL: "https://rsi-project-656a3.firebaseio.com",
+        projectId: "rsi-project-656a3",
+        storageBucket: "gs://rsi-project-656a3.appspot.com",
+        messagingSenderId: "1037981553762"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <table class="center-block">
+                <tr>
+                        <td class="walk">  </td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td class="walk">  </td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                    </tr>
+            <tr>
+                <td>B</td>
+                <td id="0" class="seat 0"><img src="seat.png"></td>
+                <td id="1" class="seat 1"><img src="seat.png"></td>
+                <td id="2" class="seat 2"><img src="seat.png"></td>
+                <td id="3" class="seat 3"><img src="seat.png"></td>
+                <td id="4" class="seat 4"><img src="seat.png"></td>
+                <td id="5" class="seat 5"><img src="seat.png"></td>
+                <td id="6" class="seat 6"><img src="seat.png"></td>
+                <td id="7" class="seat 7"><img src="seat.png"></td>
+                <td id="8" class="seat 8"><img src="seat.png"></td>
+                <td id="9" class="seat 9"><img src="seat.png"></td>
+                <td id="10" class="seat 10"><img src="seat.png"></td>
+                <td class="walk">  </td>
+                <td id="11" class="seat 11"><img src="seat.png"></td>
+                <td id="12" class="seat 12"><img src="seat.png"></td>
+                <td id="13" class="seat 13"><img src="seat.png"></td>
+                <td id="14" class="seat 14"><img src="seat.png"></td>
+                <td id="15" class="seat 15"><img src="seat.png"></td>
+                <td id="16" class="seat 16"><img src="seat.png"></td>
+                <td id="17" class="seat 17"><img src="seat.png"></td>
+                <td id="18" class="seat 18"><img src="seat.png"></td>
+                <td id="19" class="seat 19"><img src="seat.png"></td>
+                <td id="20" class="seat 20"><img src="seat.png"></td>
+                <td id="21" class="seat 21"><img src="seat.png"></td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td class="walk">  </td>
+                <td id="22" class="seat 22"><img src="seat.png"></td>
+                <td id="23" class="seat 23"><img src="seat.png"></td>
+                <td id="24" class="seat 24"><img src="seat.png"></td>
+                <td id="25" class="seat 25"><img src="seat.png"></td>
+                <td id="26" class="seat 26"><img src="seat.png"></td>
+                <td id="27" class="seat 27"><img src="seat.png"></td>
+                <td id="28" class="seat 28"><img src="seat.png"></td>
+                <td id="29" class="seat 39"><img src="seat.png"></td>
+                <td id="30" class="seat 30"><img src="seat.png"></td>
+                <td id="31" class="seat 31"><img src="seat.png"></td>
+                <td class="walk">  </td>
+                <td id="32" class="seat 32"><img src="seat.png"></td>
+                <td id="33" class="seat 33"><img src="seat.png"></td>
+                <td id="34" class="seat 34"><img src="seat.png"></td>
+                <td id="35" class="seat 35"><img src="seat.png"></td>
+                <td id="36" class="seat 36"><img src="seat.png"></td>
+                <td id="37" class="seat 37"><img src="seat.png"></td>
+                <td id="38" class="seat 38"><img src="seat.png"></td>
+                <td id="39" class="seat 39"><img src="seat.png"></td>
+                <td id="40" class="seat 40"><img src="seat.png"></td>
+                <td id="41" class="seat 41"><img src="seat.png"></td>
+                <td class="walk">  </td>
+                <td>C</td>
+                </tr>
+                <tr>
+                        <td>D</td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="walk">  </td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td>D</td>
+                    </tr>
+                    <tr>
+                            <td>E</td>
+                            <td class="walk">  </td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="walk">  </td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="walk">  </td>
+                            <td>E</td>
+                        </tr>
+                    <tr>
+                            <td>F</td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="walk">  </td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td>F</td>
+                    </tr>
+                    <tr>
+                            <td>G</td>
+                            <td class="walk">  </td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="walk">  </td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="walk"></td>
+                            <td>G</td>
+                        </tr>
+                    <tr>
+                            <td>H</td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="walk">  </td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td>H</td>
+                        </tr>
+                        <tr>
+                                <td>I</td>
+                                <td class="walk">  </td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="walk">  </td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="walk">  </td>
+                                <td>I</td>
+                            </tr>
+                <tr class="seat hd"></tr>
+                <tr>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="walk">  </td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                        <td class="seat 0"><img src="seat.png"></td>
+                    </tr>
+                    <tr>
+                            <td class="walk">  </td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="walk">  </td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="seat 0"><img src="seat.png"></td>
+                            <td class="walk">  </td>
+                        </tr>
+                        <tr>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="walk">  </td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                                <td class="seat 0"><img src="seat.png"></td>
+                            </tr>
+                            <tr>
+                                    <td class="walk">  </td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="walk">  </td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="seat 0"><img src="seat.png"></td>
+                                    <td class="walk">  </td>
+                                </tr>
+                                <tr>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="walk">  </td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                        <td class="seat 0"><img src="seat.png"></td>
+                                    </tr>
+                                    <tr class="seat hd"></tr>
+                                        <tr>
+                                                <td class="walk">  </td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="walk">  </td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="seat 0"><img src="seat.png"></td>
+                                                <td class="walk">  </td>
+                                            </tr>
+                                            <tr>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="walk">  </td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                    <td class="seat 0"><img src="seat.png"></td>
+                                                </tr>
+                                                <tr>
+                                                        <td class="walk">  </td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="walk">  </td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="seat 0"><img src="seat.png"></td>
+                                                        <td class="walk">  </td>
+                                                    </tr>
+                                                    <tr>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="walk">  </td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                            <td class="seat 0"><img src="seat.png"></td>
+                                                        </tr>
+        </table>
+    </div>
+    <div>
+        <button onclick="updateDB()">selectSeats</button>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="js/index.js"></script>
+    <script src="js/jquery-2.2.3.min.js"></script>
+</body>
+</html>

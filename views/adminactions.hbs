@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RSI Pune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./css/qrcode.css">
+  </head>
+  <style>
+    .navBar {
+      display: block;
+    }
+
+    .items {
+        margin-top: 60px;
+    }
+
+    .items button {
+      display: block;
+      width: 100%;
+      background: rgb(43, 43, 42);
+      padding: 15px 10px;
+      color: white;
+      border: none;
+      margin-top: 4vh;
+    }
+
+    @media only screen and (min-width: 784px){
+      .items {
+        margin: 0;
+        padding: 0;
+        margin-top: 30px;
+      }
+
+      .items button {
+      display: inline;
+      width: 100%;
+      background: rgb(43, 42, 42);
+      padding: 10px;
+      color: white;
+      border: none;
+      margin-bottom: 8px;
+      margin-top :10%;
+    }
+    }
+  </style>
+
+  <script src="./qrcode.min.js"></script>
+   
+  <body style="background-color:black;background-image:url('./bg2.jpg');">
+  <div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+
+  <div id="Items" class="items">
+ <button class="btn" id="homebutton" onclick="window.location.href='/home'" type="button">HOME</button>
+   {{#if_eq rsiid 'A-007'}}
+    <button class="btn" id="adduser" onclick="window.location.href='/addUser'" type="button">ADD USER</button>
+   {{/if_eq}} 
+   {{#if_eq rsiid 'A-007'}}
+    <button class="btn" id="deleteuser" onclick="window.location.href='/deleteUser'" type="button">DELETE USER</button>
+   {{/if_eq}}
+   {{#if_eq rsiid 'A-007'}}
+    <button class="btn" id="changedependents" onclick="window.location.href='/changeDependents'" type="button">CHANGE DEPENDENTS</button>
+   {{/if_eq}} 
+   {{#if_eq rsiid 'A-007'}}
+    <button class="btn" id="changeprices" onclick="window.location.href='/changePrices'" type="button">CHANGE PRICES</button>
+   {{/if_eq}} 
+   {{#if_eq rsiid 'A-007'}}
+    <button class="btn" id="changemobilenumber" onclick="window.location.href='/changeMobileNumber'" type="button">CHANGE MOBILE NUMBER</button>
+   {{/if_eq}}
+   </div> 
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+  </body>
+</html>

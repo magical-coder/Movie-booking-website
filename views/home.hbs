@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RSI Pune</title>
+        <link rel="stylesheet" type="text/css" href="./css/home.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body class="wrapper">
+      <nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="./rsi.png" height="60" align="left">
+      <a class="navbar-brand" href="#"></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                       
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id=mynavbar>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/home">Home</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/history">History</a></li>
+      {{#if_eq rsiid 'A-007'}}
+      <li><a href="/adminActions">Actions</a></li>
+      {{/if_eq}}
+      <li><a href="/myTickets">Tickets</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
+      
+    </ul>
+    </div>
+   </div>
+  </nav>
+        
+          <div class="container-fluid"> 
+            <div  id="demo" class="col-xs-6 col-md-3 col-sm-6 col-lg-3 ctgr"><a href="/sports"><img src="./images1/sports.png" ><strong>SPORTS</strong></a></div>
+            <div  id="demo" class="col-xs-6 col-md-3 col-sm-6 col-lg-3 ctgr"><a href="/movies"><img src="./images1/movie.png" ><strong>MOVIE</strong></a></div>
+            <div  id="demo" class="col-xs-6 col-md-3 col-sm-6 col-lg-3 ctgr"><a href="/sanjog"><img src="./images1/sanjog.png" ><strong>SANJOG HALL</strong></a></div>
+            <div  id="demo" class="col-xs-6 col-md-3 col-sm-6 col-lg-3 ctgr"><a href="/bar"><img src="./images1/bar.png" ><strong>BAR</strong></a></div>
+            <div  id="demo" class="col-xs-6 col-md-3 col-sm-6 col-lg-3 ctgr"><a href="/swimming"><img src="./images1/swim.png" ><strong>SWIMMING POOL</strong></a></div>
+            <div  id="demo" class="col-xs-6 col-md-3 col-sm-6 col-lg-3 ctgr"><a href="/party"><img src="./images1/party.png" ><strong>PARTY HALL</strong></a></div>
+            <div  id="demo" class="col-xs-6 col-md-3 col-sm-6 col-lg-3 ctgr"><a href="/trinco"><img src="./images1/trinco.png" ><strong>TRINCO</strong></a></div>
+            <div  id="demo" class="col-xs-6 col-md-3 col-sm-6 col-lg-3 ctgr"><a href="/guest"><img src="./images1/guestroom.png" ><strong>GUEST ROOM</strong></a></div>
+          </div>
+    </body>
+</html>

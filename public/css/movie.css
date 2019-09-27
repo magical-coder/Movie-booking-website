@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great");
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 10%;
+}
+.pos{
+  margin-left: 25%;
+  margin-bottom: 10px;
+  width: 50%;
+  background-color: aliceblue;
+}
+#button
+{
+  font-size:20px;
+  font-weight: bolder;
+  height:50px;
+}
+
+
+.col-md-5, .description {
+  padding: 0;
+}
+
+.description {
+  font-family: 'Fredericka the Great', cursive;
+  text-align: center;
+  color: #ff9900;
+}
+
+.card-header, .metadata {
+  background: none;
+  padding: 0;
+  position: relative;
+  border-style: none;
+}
+.fontsize
+{
+  font-size: 18px;
+  font-weight: bold;
+}
+.metadata {
+  font-size: 16px;
+}
+.metadata i, .metadata p {
+  float: left;
+}
+.metadata p {
+  margin-top: 0;
+  margin-left: 10px;
+}
+.metadata i {
+  color: #ff9d00;
+  margin-top: 5px;
+  margin-left: 1px;
+}
+
+.card-img {
+  -webkit-clip-path: inset(10% 0 20% 0);
+  clip-path: inset(10% 0 20% 0);
+  margin-top: -15%;
+}
+
+.siz{
+	height : auto;
+}
+
+.card-body {
+  position: relative;
+  margin-top: -30%;
+  color: black;
+}
+.card-body .card-title {
+  font-weight: 600;
+  font-size: 30px;
+  color: #414345;
+}
+.card-body .card-text {
+  margin-top: 8px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.card-body h3{
+  margin-left: 160px;
+}
+.card, .trailer-preview {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card:hover, .trailer-preview:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18);
+}
+
+.align{
+  margin-top: -100px;
+}
+
+.card {
+  height: 900px;
+  border-radius: 8pt;
+  border-style: none;
+  overflow: hidden;
+  transform: scale(0.8);
+  margin-top: 0%;
+  max-width: 250%;
+  margin-right: 1px;
+  /* margin-left: 2%; */
+  /* margin-right: 10%; */
+}
+
+@media screen and (max-width:500px){
+  h1 {
+    font-size: 25px;
+  }
+  .card {
+    margin-top: 5%;
+    max-width: 100%;
+  }
+}
+
+.trailer-preview {
+  background-color: #ff3d49;
+  position: absolute;
+  top: -46px;
+  right: 24px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 13px;
+}
+.trailer-preview:hover, .trailer-preview:disabled, .trailer-preview:active, .trailer-preview:focus {
+  background-color: #ff3d49;
+  color: white;
+}
+.trailer-preview i {
+  margin-left: 5px;
+}

@@ -1,0 +1,228 @@
+body {
+  margin: 60px;
+  background: #111;
+}
+
+.theatre {
+  display: flex;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  width: 5%;
+  transform: translate(-50%, -50%);
+}
+
+.cinema-seats {
+  display: flex;
+}
+.cinema-seats .seat {
+  cursor: pointer;
+  color: white;
+}
+.cinema-seats .seat:hover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+}
+.cinema-seats .seat.active:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.548);
+  border-radius: 7px;
+}
+
+.left .cinema-row {
+  transform: skew(-15deg);
+  margin: 0 6px;
+}
+.left .seat {
+  width: 35px;
+  height: 50px;
+  border-radius: 7px;
+  /* background:#D4AF37; */
+  background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
+  margin-bottom: 10px;
+  transform: skew(20deg);
+  margin-top: -32px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.left .row-2 {
+  transform: skew(-13deg);
+}
+.left .row-2 .seat {
+  transform: skew(15deg);
+}
+.left .row-3 {
+  transform: skew(-12deg);
+}
+.left .row-3 .seat {
+  transform: skew(16deg);
+}
+.left .row-4 {
+  transform: skew(-11deg);
+}
+.left .row-4 .seat {
+  transform: skew(15deg);
+}
+.left .row-5 {
+  transform: skew(-10deg);
+}
+.left .row-5 .seat {
+  transform: skew(12deg);
+}
+.left .row-6 {
+  transform: skew(-9deg);
+}
+.left .row-6 .seat {
+  transform: skew(10deg);
+}
+.left .row-7 {
+  transform: skew(-7deg);
+}
+.left .row-7 .seat {
+  transform: skew(8deg);
+}
+.left .row-8 {
+  transform: skew(-6deg);
+}
+.left .row-8 .seat {
+  transform: skew(8deg);
+}
+.left .row-9 {
+  transform: skew(-5deg);
+}
+.left .row-9 .seat {
+  transform: skew(8deg);
+}
+.left .row-10 {
+  transform: skew(-4deg);
+}
+.left .row-10 .seat {
+  transform: skew(8deg);
+}
+.left .row-11 {
+  transform: skew(-3deg);
+}
+.left .row-11 .seat {
+  transform: skew(8deg);
+}
+
+.right {
+  margin-left: 70px;
+}
+.right .cinema-row {
+  transform: skew(7deg);
+  margin: 0 6px;
+}
+.right .seat {
+  width: 35px;
+  height: 50px;
+  border-radius: 7px;
+  background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
+  margin-bottom: 10px;
+  transform: skew(-8deg);
+  margin-top: -32px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.right .row-2 {
+  transform: skew(9deg);
+}
+.right .row-2 .seat {
+  transform: skew(-10deg);
+}
+.right .row-3 {
+  transform: skew(9deg);
+}
+.right .row-3 .seat {
+  transform: skew(-10deg);
+}
+.right .row-4 {
+  transform: skew(9deg);
+}
+.right .row-4 .seat {
+  transform: skew(-10deg);
+}
+.right .row-5 {
+  transform: skew(9deg);
+}
+.right .row-5 .seat {
+  transform: skew(-10deg);
+}
+.right .row-6 {
+  transform: skew(9deg);
+}
+.right .row-6 .seat {
+  transform: skew(-10deg);
+}
+.right .row-7 {
+  transform: skew(9deg);
+}
+.right .row-7 .seat {
+  transform: skew(-10deg);
+}
+.right .row-4 {
+  transform: skew(9deg);
+}
+.right .row-4 .seat {
+  transform: skew(-10deg);
+}
+.right .row-5 {
+  transform: skew(9deg);
+}
+.right .row-5 .seat {
+  transform: skew(-10deg);
+}
+.right .row-6 {
+  transform: skew(9deg);
+}
+.right .row-6 .seat {
+  transform: skew(-10deg);
+}
+.right .row-7 {
+  transform: skew(9deg);
+}
+.right .row-7 .seat {
+  transform: skew(-10deg);
+}
+
+.right .row-8 {
+  transform: skew(9deg);
+}
+.right .row-8 .seat {
+  transform: skew(-10deg);
+}
+.right .row-9 {
+  transform: skew(9deg);
+}
+.right .row-9 .seat {
+  transform: skew(-10deg);
+}
+.right .row-10 {
+  transform: skew(9deg);
+}
+.right .row-10 .seat {
+  transform: skew(-10deg);
+}
+.right .row-11 {
+  transform: skew(9deg);
+}
+.right .row-11 .seat {
+  transform: skew(-10deg);
+}
+
+.opa {
+  opacity: 0;
+}
+
+.numbers{
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid red;
+}

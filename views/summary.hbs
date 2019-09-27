@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    RSI Pune
+  </title>
+  <meta utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body{
+  background-color: #DDD;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;
+
+}
+h1{
+  color: ;
+  text-align:center;
+
+}
+table {
+  /* font-family: arial, sans-serif;
+  border-collapse: collapse;
+  border-radius: 4px;
+  width: 100%; */
+}
+
+td, th {
+  /* border: 1px solid #557A95; */
+  text-align: left;
+  padding: 4px;
+}
+
+tr:nth-child(even) {
+  background-color:#999 ;
+}
+
+.box {
+    width:300px;
+    height:450px;
+    background-color:;
+    position:fixed;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:40%;
+    left:50%;
+    font-family: Lato;
+
+}
+
+.button {
+    background-color:#333;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: normal;
+    margin-left: 100px;
+    width: 100px;
+    color: white;
+  }
+
+</style>
+</head>
+
+
+<body >
+
+<div class="container">
+<h1>SUMMARY</h1>
+<table class='box' >
+
+  <tr>
+    <td><p style="font-size:20px; font-weight: Bold;">Movie: {{movie}}</p></td>
+  </tr>
+  <tr>
+    <td><p style="font-size:20px; font-weight: Bold;">Date: {{date}}</p></td>
+  </tr>
+  <tr>
+    <td><p style="font-size:20px; font-weight: Bold;">Time: {{time}}hr</p></td>
+  </tr>
+  <tr>
+    <td><p style="font-size:20px; font-weight: Bold;">RSI Id: {{rsiid}}</p></td>
+  </tr>
+  <tr>
+    <td><p style="font-size:20px; font-weight: Bold;">Seats: [{{seats}}]</p></td>
+  </tr>
+  <tr>
+    <td><p style="font-size:20px; font-weight: Bold;">Total: ₹ {{price}}</p></td>
+  </tr>
+  <tr>
+    <td><form action="/book" method="POST">
+      <input class="button" type="submit" value="BOOK">
+    </form></td>
+  </tr>  
+</table>
+</div>
+
+</body>
+</html>

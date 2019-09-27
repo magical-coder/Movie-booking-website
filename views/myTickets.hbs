@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RSI Pune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./css/qrcode.css">
+  </head>
+  <style>
+    .navBar {
+      display: block;
+    }
+
+    .menu 
+    {
+      width: 50px;
+    }
+
+    .items button {
+      display: block;
+      width: 100%;
+      background: rgb(43, 43, 42);
+      padding: 10px;
+      color: white;
+      border: none;
+      margin-bottom: 8px;
+    }
+
+    .hide-mobile {
+      display: none;
+    }
+
+    @media only screen and (min-width: 784px){
+      .hide-desktop {
+        display: none;
+      }
+
+      .hide-mobile {
+        display: block;
+      }
+
+      .items {
+        margin: 0;
+        padding: 0;
+      }
+
+      .items button {
+      display: inline;
+      width: 33%;
+      background: rgb(43, 42, 42);
+      padding: 10px;
+      color: white;
+      border: none;
+      margin-bottom: 8px;
+    }
+    }
+  </style>
+
+  <script src="./qrcode.min.js"></script>
+   
+  <body style="background-color:black;background-image:url('./bg2.jpg');">
+  <div class="navBar">
+  <img src="./menu1.png" style="border-color:black;" class="menu hide-desktop" id="Menu" alt="hamburger">
+  <div id="Items" class="items show-desktop hide-mobile">
+ <button class="btn" id="homebutton" onclick="window.location.href='/home'" type="button">HOME</button>
+   {{#if_eq rsiid 'A-007'}}
+    <button class="btn" id="summarybutton" onclick="window.location.href='/downloadSummary'" type="button">DOWNLOAD SUMMARY</button>
+   {{/if_eq}} 
+   {{#if_eq rsiid 'A-007'}}
+    <button class="btn" id="deletebutton" onclick="window.location.href='/deleteTicket'" type="button">DELETE TICKET</button>
+   {{/if_eq}} 
+   </div> 
+    </div>
+    <div class="align">
+    <div class="row">
+    {{#each ticketDetails}}
+    <div class="container">
+      <div class="card">   
+               <div class="card-header" >
+                <div class="qrcode" >
+                  <canvas class="canvas" id="{{@index}}"></canvas>
+                </div>
+                 
+               </div>
+               <div class="card-body" >
+                  
+                  
+               
+                    <ul class="list">
+                      <li class="movname">{{movieNmae}}</li>
+                      <li>Date: {{date}}</li>
+                      <li>Time: {{movietime}}hr</li>
+                      <li>Seats: {{seatsMap}}</li>
+                      <li>RSAMI Id: {{userID}}</li>
+                      <li>Price: ₹{{cost}}</li>
+                      </ul>
+               </div>
+      </div>
+      </div>
+    {{/each}}
+    </div>
+    </div>
+  </body>
+
+  <script>
+    let menu = document.getElementById('Menu');
+    let items = document.getElementById('Items');
+    
+    menu.addEventListener('click', () => {
+      event.preventDefault();
+      if(items.style.display === 'block')
+        items.style.display = 'none';
+      else
+        items.style.display = 'block';
+      
+    });
+  </script>
+
+  <script>
+    let jsObj;
+    let qrData;
+    {{#each ticketDetails}}
+    jsObj = {
+        Movietime: "{{movietime}}",
+        cost: {{cost}},
+        date: "{{date}}",
+        movieNmae: "{{movieNmae}}",
+        provisional: true,
+        seatsList: [{{seatsList}}],
+        timestamp: "{{timestamp}}",
+        userID: "{{userID}}"
+      };
+    qrData = JSON.stringify(jsObj);
+      QRCode.toCanvas(document.getElementById('{{@index}}'), qrData, function (error) {
+        if (error) console.error(error)
+        console.log('success!');
+      })
+    {{/each}}
+    </script>  
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RSI Pune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./css/qrcode.css">
+  <style>
+  #button
+  {
+    font-weight: bolder;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 35%;
+    width: 30%;
+    height: 20%;
+    background-color: aliceblue;
+    border-color: black;
+    border-width: 3px;
+  }
+  </style>
+  </head>
+  
+
+  <script src="./qrcode.min.js"></script>
+   
+  <body style="background-image:url('./bg2.jpg');">
+
+    <div class="container">
+      <div class="card">   
+               <div class="card-header" >
+                <div class="qrcode" >
+                  <canvas class="canvas" id="canvas"></canvas>
+                </div>
+                 
+               </div>
+               <div class="card-body" >
+                  
+                  
+                    <ul class="list">
+                      <li class="movname">{{movie}}</li>
+                      <li>Date: {{date}}</li>
+                      <li>Time: {{time}}hr</li>
+                      <li>Seats: {{seatList}}</li>
+                      <li>RSI Id: {{rsiid}}</li>
+                      <li>Price: ₹{{price}}</li>
+                      </ul>
+                  
+               </div>
+      </div>
+      <div>
+         <button id="button" onclick="window.location.href='/home'" type="button">CLOSE</button>
+      </div>
+      </div>
+  </body>
+
+  <script>
+      {{!-- let str=[];
+      let key=0;
+      for(key=0;key<{{seats}}.length;key++)
+      {
+
+      } --}}
+      {{!-- var xx= [{{seats}}];
+      var kk=0;
+      var xxx = [];
+      for(kk=0; kk<xx.length; kk++){
+        xxx[kk] = '"'+xx[kk]+'"';
+      }  --}}
+      let jsObj = {
+        Movietime: "{{time}}",
+        cost: {{price}},
+        date: "{{date}}",
+        movieNmae: "{{movie}}",
+        provisional: true,
+        seatsList: [{{seats}}],
+        timestamp: "{{time}}",
+        userID: "{{rsiid}}"
+      };
+      let qrData = JSON.stringify(jsObj);
+      QRCode.toCanvas(document.getElementById('canvas'), qrData, function (error) {
+        if (error) console.error(error)
+        console.log('success!');
+      })
+    </script>  
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RSI Pune</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-image:url('./bg2.jpg');text-align:center">
+
+<style>
+.size{
+ height: 0.5px;
+ text-align:justify;
+ width: 50%;
+ font-size:17px;
+ margin: 25px;
+
+}
+.modal
+{
+	height:680px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  min-width: 422px;
+}
+.center {
+   box-sizing: border-box;
+		}
+	form {
+	<!--border: 1px solid black;-->
+  background-color: grey;
+
+   box-sizing: border-box;
+   color: orange;
+		}
+.modal-body{
+	background-color: black;
+}
+.modal-footer
+{
+  padding-left: 40px;
+  background-color: goldenrod;
+}
+@media screen and (max-width=588px){
+  .modal {
+    -ms-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  }
+}
+
+</style>
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button id="modal" style="color:black;font-weight:bolder;background-color:goldenrod;border-color:goldenrod;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Click!</button>
+
+  <!-- Modal -->
+  <div  class="modal fade center  " id="myModal" role="dialog">
+    <div class="modal-dialog " >
+
+      <!-- Modal content-->
+
+      <div class="modal-content" style="border-color:black;">
+          <div style="background-color: goldenrod;"class="ENTER THE DETAILS">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="font-size:200%;"><b>ENTER THE DETAILS</b></h4>
+        </div>
+        <div class="modal-body">
+	<form  class="form1" action="/layout" method="post" onsubmit="return validatethisform(member,dependents,guests);">
+  <fieldset>
+    <legend style="color:goldenrod;font-weight:bolder;">BOOKING DETAILS</legend>
+	<div style="box-shadow: inset 0 0 0 70px rgba(0, 0, 0, 0.2);" class="size">
+	MEMBER:
+  <select id="ddm" name="member" onchange="calMembers(this.value)">
+  <option value="0">0</option>
+	<option value="1">1</option>
+</select>
+</div>
+    <br>
+	<div class="size">
+    DEPENDENTS:
+    <select id="ddl" name="dependents" onchange="calDependents(this.value)">
+      <option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+
+	</select>
+
+	</div>
+    <br>
+	<div class="size">
+	GUESTS:
+    <select id="ddn" name="guests" onchange="calGuests(this.value)">
+	<option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	</select>
+	</div>
+  <input id="price" type="hidden" name="price">
+  <input id="seats" type="hidden" name="seats">
+	<br>
+  </fieldset>
+
+  <br><br>
+  <button id="" style="color: black;font-size: 18px;
+    background-color:goldenrod;" onclick="submit">Submit</button>
+
+  <button style="color: black;font-size: 18px;
+    background-color:goldenrod;" type="reset" onclick="resetFields();">Reset</button>
+</form>
+<script>
+jQuery(function(){
+   jQuery('#modal').click();
+});
+</script>
+		<script>
+      function resetFields()
+      {
+        document.getElementById("demo1").innerHTML = 0;
+        document.getElementById("demo").innerHTML = 0;
+      }
+      function validatethisform(member,dependents,guests)
+      {
+        if({{fl}}==0)
+        {
+        if(member.value*1!=0 || dependents.value*1!=0)
+        {
+          let totseat = member.value*1 + guests.value*1 + dependents.value*1;
+          let totcost = member.value*1*{{Mp}} + guests.value*1*{{Gp}} + dependents.value*1*{{Dp}};
+          document.getElementById("price").value = totcost;
+          document.getElementById("seats").value = totseat;
+          return confirm("TOTAL SEATS:"+totseat+" "+"TOTAL PRICE: ₹ "+totcost);
+          return true;
+        }
+        else
+        {
+          window.alert("Please Select At Least Member Or Dependent!!!");
+          return false;
+        }
+        }
+        else
+        {
+          if(member.value*1!=0 || dependents.value*1!=0 || guests.value*1!=0)
+          {
+            let totseat = member.value*1 + guests.value*1 + dependents.value*1;
+            let totcost = member.value*1*{{Mp}} + guests.value*1*{{Gp}} + dependents.value*1*{{Dp}};
+            document.getElementById("price").value = totcost;
+            document.getElementById("seats").value = totseat;
+            return confirm("TOTAL SEATS:"+totseat+" "+"TOTAL PRICE: ₹ "+totcost);
+            return true;
+          }
+          else
+          {
+            window.alert("Please Enter Details!!!");
+            return false;
+          }
+        }
+      }
+    function calDependents(value) {
+      event.preventDefault();
+      if(value*1>{{Dc}} && {{fl}}==0)
+      {
+        alert("DEPENDENTS EXCEEDED!!!");
+        this.value=0;
+        document.getElementById("ddl").selectedIndex = "0";
+      }
+        if(value*1>{{Dc}} && {{fl}}==1)
+        {
+          alert("DEPENDENTS EXCEEDED!!!");
+          this.value=0;
+          document.getElementById("ddl").selectedIndex = "0";
+        }
+    }
+    function calMembers(value) {
+      event.preventDefault();
+      if(value*1>{{Mc}} && {{fl}}==0)
+      {
+        alert("MEMBERS EXCEEDED!!!");
+        this.value=0;
+        document.getElementById("ddm").selectedIndex = "0";
+      }
+      if(value*1>{{Mc}} && {{fl}}==1)
+      {
+        alert("MEMBERS EXCEEDED!!!");
+        this.value=0;
+        document.getElementById("ddm").selectedIndex = "0";
+      }
+    }
+    function calGuests(value) {
+      event.preventDefault();
+      if(value*1>{{Gc}} && {{fl}}==0)
+      {
+        alert("GUESTS EXCEEDED!!!");
+        this.value=0;
+        document.getElementById("ddn").selectedIndex = "0";
+      }
+      if(value*1>{{Gc}} && {{fl}}==1)
+      {
+        alert("GUESTS EXCEEDED!!!");
+        this.value=0;
+        document.getElementById("ddn").selectedIndex = "0";
+      }
+    }
+		function calculate(member,dependents,guests) {
+									event.preventDefault();
+                  if(member.value*1==0 && dependents.value*1==0)
+                  {
+                    //alert("PLEASE ENTER MEMBER OR DEPENDENT!!!!");
+                  }
+                  else{
+									var x = member.value * {{Mp}} ;
+									var y= guests.value * {{Gp}} ;
+									var z= dependents.value * {{Dp}};
+									var sum=x + y + z;
+									document.getElementById("demo").innerHTML = sum;
+                  document.getElementById("price").value = sum;
+                }
+							 }
+		function calculateseats(member,dependents,guests) {
+									event.preventDefault();
+                  if(member.value*1==0 && dependents.value*1==0)
+                  {
+                    window.alert("PLEASE ENTER MEMBER OR DEPENDENT!!!!");
+                  }
+                  else if(dependents.value*1>{{Dp}})
+                  {
+                    alert("DEPENDENTS EXCEEDED!!!!");
+                  }
+                  else
+                  {
+									var sum1=member.value*1 +guests.value*1 +dependents.value*1;
+									document.getElementById("demo1").innerHTML = sum1;
+                  document.getElementById("seats").value = sum1;
+                }
+							 }
+               function totalCalculate(member,dependents,guests)
+               {
+                 calculateseats(member,dependents,guests);
+                 calculate(member,dependents,guests);
+               }
+	  </script>
+        </div>
+        <div style="background-color: black;overflow:hidden; " class="modal-footer">
+           <p style="float: left;color:goldenrod;font-weight:bolder;font-size:21px;">PRICING:</p><br/><br/>
+           <p style="float: left;color:white;font-size:20px;">Member/Dependent @ ₹{{Mp}}</p><br/><br/>
+           <p style="float: left;color:white;font-size:20px;">Guest @ ₹{{Gp}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

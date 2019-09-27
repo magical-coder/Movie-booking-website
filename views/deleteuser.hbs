@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>RSI Pune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            margin-top: 10%;
+        }
+        .btn{
+            
+            
+            background-color: orange;
+        }
+        .button{
+            text-align: center;
+            width:100%;
+            margin: 0 auto;
+            display:block;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 style="text-align: center;">Enter The Details Of User</h2>
+   <div style="font-size: 13px; color: blue; font-weight: bolder;text-align:center;">{{messages}}</div>
+   <form class="form-horizontal" action="/deleteUser" method="post">
+    <div class="form-group">
+      <label class="control-label col-sm-2 col-lg-4" for="rsiid">Enter RSI ID :</label>
+      <div class="col-sm-10 col-lg-4">          
+        <input type="text" class="form-control" id="rsiid" placeholder="X-1234" name="rsiID">
+      </div>
+    </div>
+<div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-2">
+            <div>
+        <button type="submit" class=" button btn btn-default">Delete</button>
+    </div>
+    <div>
+       <button type="button" class="button btn btn-default" onclick="window.location.href='/adminActions'">Back</button>
+    </div>
+        </div>
+        <div class="col-sm-5"></div>
+</div>
+  </form>
+</div>
+</body>
+</html>

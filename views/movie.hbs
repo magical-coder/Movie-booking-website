@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RSI Pune</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./css/movie.css"> 
+  <script src="https://npmcdn.com/js-alert/dist/jsalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image:url('./bg1.jpg'); background-size:contain">
+  <div class="align">
+  <div class="row">
+  {{#each movieDetails}} 
+  <div class="container col-lg-4">     
+  <div class="card siz"> 
+      <div class="card-header">
+        <img class="card-img" src={{image_url}} alt="Card image">
+      </div>  
+      <div class="card-body">
+        <h1 class="card-title">{{name}}</h1>
+        <p class="timing fontsize">Certification: U/A</p>
+        <p class="language fontsize">Language: {{language}}</p>
+        <p class="date fontsize">Date: {{date}}</p>
+        <p class="duration fontsize">Duration: {{duration}}hr</p>
+        <p class="timing fontsize">Timing: {{timing}}hr</p>
+        <a class="trailer-preview" href="/adminVSuser?key={{movieKey}}">
+         <i class="fa fa-play" aria-hidden="true"></i>
+        </a>
+      </div>
+      {{#if_eq rsiid 'A-007'}}
+        <button id="button" onclick="var r = confirm('Are You Sure You Want To Delete This Movie?');
+      if(r==true){
+        window.location.href='/deleteMovie?key={{movieKey}}';
+      }"
+      type="button">
+      DELETE</button>
+      {{/if_eq}}
+  </div>
+  </div>
+  {{/each}}
+  </div>
+  </div>
+  <footer>
+    <div>
+        <button id="button" class="pos btn" onclick="window.location.href='/home'" type="button">
+         HOME</button>
+       {{#if_eq adminId 'A-007'}}
+        <button id="button" class="pos btn" onclick="window.location.href='/addMovie'" type="button">
+         ADD MOVIE</button>
+      {{/if_eq}}
+    </div>
+  </footer>
+  <script src='https://use.fontawesome.com/7a267b3298.js'></script>
+<script>
+$(document).ready(function(){
+  if('{{messages}}'){
+    alert('{{messages}}');
+  }
+});
+</script>
+</body>
+</html>
