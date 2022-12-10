@@ -14,7 +14,7 @@
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
     "date-time": "^2.1.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "firebase": "^5.7.2",
     "firebase-admin": "^6.4.0",
