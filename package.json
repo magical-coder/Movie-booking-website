@@ -17,7 +17,7 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "firebase": "^5.7.2",
-    "firebase-admin": "^6.4.0",
+    "firebase-admin": "^11.4.1",
     "hbs": "^4.0.1",
     "js-alert": "^1.0.4",
     "node-xls": "0.0.8",
